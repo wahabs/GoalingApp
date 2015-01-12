@@ -41,5 +41,27 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'rspec-rails'
 end
 
+group :development do
+  # Run 'annotate' in Terminal to add helpful comments to models.
+  gem 'annotate'
+  # These two give you a great error handling page.
+  # But make sure to never use them in production!
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  # Gotta have byebug...
+  # pry > irb
+  gem 'pry-rails'
+  gem 'quiet_assets'
+
+end
+
+group :test do
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy'
+end
