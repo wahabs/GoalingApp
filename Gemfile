@@ -63,5 +63,6 @@ end
 group :test do
   gem 'capybara'
   gem 'guard-rspec'
+  gem 'shoulda-matchers'
   gem 'launchy'
 end
