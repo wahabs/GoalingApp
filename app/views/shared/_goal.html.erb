@@ -1,7 +1,7 @@
 
 <% if current_user == goal.user %>
 
-  <strong><%= goal.title %> <%= (goal.completed) ? " (COMPLETED)" : "" %></strong>
+  <strong><%= link_to "#{goal.title}", goal_url(goal) %> <%= (goal.completed) ? " (COMPLETED)" : "" %></strong>
   <%= link_to "Edit", edit_goal_url %>
   <%= button_to "Delete", goal_url(goal), method: :delete %>
   <br>
@@ -9,7 +9,7 @@
 
 <% elsif goal.is_private == false%>
 
-  <strong><%= goal.title %> - <%= goal.user.username %> <%= (goal.completed) ? " (COMPLETED)" : "" %></strong>
+  <strong><%= link_to "#{goal.title}", goal_url(goal) %> - <%= goal.user.username %> <%= (goal.completed) ? " (COMPLETED)" : "" %></strong>
   <%= goal.body %>
 
 <% end  %>
