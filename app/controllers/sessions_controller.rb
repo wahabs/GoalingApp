@@ -14,8 +14,8 @@ class SessionsController < ApplicationController
       log_in!(@user)
       redirect_to goals_url
     else
-      flash.now[:error] ||= []
-      flash.now[:error] << "Invalid credentials"
+      flash.now[:errors] ||= []
+      flash.now[:errors] << "Invalid credentials"
       render :new
     end
   end
